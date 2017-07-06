@@ -1,47 +1,32 @@
 {
-  "rules": {
-    "indent": [
-      2,
-      2,
-      {
-        "SwitchCase": 1
-      }
-    ],
-    "space-before-function-paren": [
-      2,
-      {
-        "anonymous": "always",
-        "named": "never"
-      }
-    ],
-    "no-use-before-define": [
-      2,
-      "nofunc"
-    ],
-    // TODO: turn on later
-    "comma-dangle": [
-      0
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
-    ],
-    "no-underscore-dangle": [
-      0
-    ]
-  },
+  "parser": "babel-eslint",
+  "extends": [
+    "standard"
+  ],
+  "plugins": [
+    "babel",
+    "promise"
+  ],
   "env": {
-    "node": true,
+    "node" : true,
     "mocha": true
   },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
+  "globals": {
+    "__DEV__"      : false,
+    "__TEST__"     : false,
+    "__PROD__"     : false,
+    "__COVERAGE__" : false
   },
-  "extends": [
-    "eslint:recommended",
-    "airbnb-base"
-  ]
+  "rules": {
+    "key-spacing"          : "off",
+    "brace-style"          : [2, "stroustrup", {"allowSingleLine": true}],
+    "semi"                 : [2, "always"],
+    "quotes"               : "off",
+    "no-return-await"      : 2,
+    "jsx-quotes"           : [2, "prefer-double"],
+    "max-len"              : [2, 120, 2],
+    "object-curly-spacing" : "off",
+    "space-before-function-paren": "off",
+    "comma-dangle"         : "off"
+  }
 }
