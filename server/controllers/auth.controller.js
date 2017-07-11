@@ -47,4 +47,11 @@ function getRandomNumber(req, res) {
   });
 }
 
-export default { login, getRandomNumber };
+function getSquare(req, res) {
+  const value = 1 * (req.params.value || req.query.value);
+  return res.json({
+    num: (value * value),
+  });
+}
+
+export default { login, getRandomNumber, getSquare };
